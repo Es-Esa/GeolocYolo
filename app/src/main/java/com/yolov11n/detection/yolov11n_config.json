@@ -1,0 +1,59 @@
+{
+  "model_file_name": "yolov11n_human.tflite",
+  "labels_file_name": "labels.txt",
+  "metadata_file_name": "yolov11n_metadata.json",
+  
+  "input_image_size": 640,
+  "input_tensor_format": "NCHW",
+  "output_format": "YOLO_DETECTIONS",
+  "expected_output_shape": [1, 300, 6],
+  
+  "confidence_threshold": 0.5,
+  "nms_threshold": 0.4,
+  "human_class_id": 0,
+  "max_detections": 100,
+  "apply_nms": true,
+  
+  "preferred_delegate": "GPU",
+  "thread_count": 4,
+  "target_fps": 30,
+  "frame_skipping_enabled": true,
+  "adaptive_frame_skipping": true,
+  "enable_memory_optimization": true,
+  "enable_threading_optimization": true,
+  
+  "keep_aspect_ratio": true,
+  "convert_to_grayscale": true,
+  "normalization_method": "DIVIDE_BY_255",
+  "resize_method": "NEAREST_NEIGHBOR",
+  
+  "quantization_type": "FP16",
+  "enable_quantization": true,
+  "calibration_dataset_path": "calibration_dataset.yaml",
+  
+  "max_buffer_pool_size": 5,
+  "enable_memory_pooling": true,
+  "max_heap_memory_mb": 256,
+  
+  "enable_dynamic_model_selection": true,
+  "thermal_throttling_enabled": true,
+  "battery_aware_optimization": true,
+  
+  "enable_performance_logging": true,
+  "enable_detailed_profiling": false,
+  "debug_output_enabled": false,
+  
+  "gpu_options": {
+    "precision_loss_allowed": false,
+    "inference_preference": "FAST_SINGLE_ANSWER",
+    "enable_serialization": true,
+    "max_delegates": 1
+  },
+  
+  "nnapi_options": {
+    "execution_preference": "SUSTAINED_SPEED",
+    "enable_burst_execution": true,
+    "enable_memory_domains": true,
+    "enable_qos_hints": true
+  }
+}

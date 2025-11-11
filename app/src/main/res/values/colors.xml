@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- YOLO Detection App Specific Colors -->
+    <color name="app_primary">#FF1976D2</color>
+    <color name="app_primary_dark">#FF1565C0</color>
+    <color name="app_accent">#FFFF5722</color>
+    <color name="app_background">#FF121212</color>
+    
+    <!-- Detection Colors -->
+    <color name="person_color">#FF4CAF50</color>
+    <color name="vehicle_color">#FFFF9800</color>
+    <color name="animal_color">#FF9C27B0</color>
+    <color name="other_color">#FFF44336</color>
+    
+    <!-- UI Colors -->
+    <color name="green">#FF4CAF50</color>
+    <color name="red">#FFF44336</color>
+    <color name="blue">#FF2196F3</color>
+    <color name="yellow">#FFFFC107</color>
+    <color name="orange">#FFFF9800</color>
+    <color name="purple">#FF9C27B0</color>
+    <color name="gray">#FF9E9E9E</color>
+    <color name="dark_gray">#FF424242</color>
+    
+    <!-- Transparency Colors -->
+    <color name="black_transparent">#80000000</color>
+    <color name="white_transparent">#80FFFFFF</color>
+    <color name="green_transparent">#804CAF50</color>
+    <color name="red_transparent">#80F44336</color>
+    <color name="blue_transparent">#802196F3</color>
+    <color name="yellow_transparent">#80FFC107</color>
+    <color name="orange_transparent">#80FF9800</color>
+    <color name="purple_transparent">#809C27B0</color>
+    <color name="gray_transparent">#809E9E9E</color>
+    
+    <!-- Status Colors -->
+    <color name="status_success">#FF4CAF50</color>
+    <color name="status_warning">#FFFFC107</color>
+    <color name="status_error">#FFF44336</color>
+    <color name="status_info">#FF2196F3</color>
+    
+    <!-- Performance Colors -->
+    <color name="fps_high">#FF4CAF50</color>
+    <color name="fps_medium">#FFFFC107</color>
+    <color name="fps_low">#FFF44336</color>
+    <color name="memory_high">#FFFF5722</color>
+    <color name="memory_normal">#FF4CAF50</color>
+    
+    <!-- Camera Colors -->
+    <color name="camera_overlay">#80000000</color>
+    <color name="camera_border">#FF2196F3</color>
+    <color name="focus_indicator">#FF4CAF50</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#FFB0B0B0</color>
+    <color name="text_accent">#FFFF5722</color>
+    <color name="text_disabled">#FF666666</color>
+    
+    <!-- Additional UI Colors for new components -->
+    <color name="accent_color">#FFFF4081</color>
+    <color name="settings_background">#FFF5F5F5</color>
+    <color name="detection_confidence_high">#FF8BC34A</color>
+    <color name="detection_confidence_medium">#FFFFC107</color>
+    <color name="detection_confidence_low">#FFFF5722</color>
+    <color name="performance_excellent">#FF4CAF50</color>
+    <color name="performance_good">#FF8BC34A</color>
+    <color name="performance_fair">#FFFFC107</color>
+    <color name="performance_poor">#FFF44336</color>
+    <color name="primary_text_dark">#FF212121</color>
+    <color name="secondary_text_dark">#FF757575</color>
+    <color name="background_dark">#FF212121</color>
+</resources>

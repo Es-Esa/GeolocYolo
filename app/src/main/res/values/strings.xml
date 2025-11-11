@@ -1,0 +1,195 @@
+<resources>
+    <string name="app_name">YOLOv11n Human Detection</string>
+    
+    <!-- Main Activity Strings -->
+    <string name="initializing">Initializing...</string>
+    <string name="loading_model">Loading YOLOv11n model...</string>
+    <string name="loading_camera">Loading camera...</string>
+    <string name="model_loaded">Model loaded successfully</string>
+    <string name="camera_ready">Camera ready</string>
+    <string name="detection_ready">Detection ready</string>
+    
+    <!-- Button Labels -->
+    <string name="flip_camera">Flip Camera</string>
+    <string name="capture">Capture</string>
+    <string name="detection_on">Detection ON</string>
+    <string name="detection_off">Detection OFF</string>
+    <string name="settings">Settings</string>
+    <string name="statistics">Statistics</string>
+    <string name="resolution">Resolution</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    
+    <!-- Status Messages -->
+    <string name="status_fps">%d FPS</string>
+    <string name="status_detections">Detections: %d</string>
+    <string name="status_persons">Persons: %d</string>
+    <string name="status_memory">%d MB</string>
+    <string name="status_model">YOLOv11n</string>
+    <string name="status_delegates">CPU/GPU/NNAPI</string>
+    <string name="status_resolution">%dx%d</string>
+    
+    <!-- Error Messages -->
+    <string name="error_camera_init">Failed to initialize camera</string>
+    <string name="error_model_load">Failed to load YOLO model</string>
+    <string name="error_inference">Inference error occurred</string>
+    <string name="error_permission_denied">Camera permission is required</string>
+    <string name="error_out_of_memory">Out of memory error</string>
+    <string name="error_network">Network error</string>
+    <string name="error_unknown">Unknown error occurred</string>
+    
+    <!-- Permission Messages -->
+    <string name="permission_camera_title">Camera Permission Required</string>
+    <string name="permission_camera_message">This app needs camera access to detect humans in real-time</string>
+    <string name="permission_grant">Grant Permission</string>
+    <string name="permission_deny">Deny</string>
+    <string name="permission_permanently_deny">Permission permanently denied. Please enable in app settings.</string>
+    
+    <!-- Model Information -->
+    <string name="model_yolov11n">YOLOv11n - Optimized for Mobile</string>
+    <string name="model_fps32">Float32 Model</string>
+    <string name="model_fps16">Float16 Quantized</string>
+    <string name="model_int8">Int8 Quantized</string>
+    <string name="model_input_size">Input: %dx%d</string>
+    <string name="model_classes">Classes: %d</string>
+    <string name="model_parameters">Parameters: %.1fM</string>
+    
+    <!-- Performance Strings -->
+    <string name="performance_excellent">Excellent</string>
+    <string name="performance_good">Good</string>
+    <string name="performance_fair">Fair</string>
+    <string name="performance_poor">Poor</string>
+    
+    <!-- Settings Strings -->
+    <string name="settings_title">Detection Settings</string>
+    <string name="settings_confidence">Confidence Threshold</string>
+    <string name="settings_iou">IoU Threshold</string>
+    <string name="settings_max_detections">Max Detections</string>
+    <string name="settings_input_size">Input Size</string>
+    <string name="settings_delegate">Hardware Delegate</string>
+    <string name="settings_quantization">Model Quantization</string>
+    <string name="settings_person_only">Person Only Detection</string>
+    <string name="settings_show_confidence">Show Confidence</string>
+    <string name="settings_show_labels">Show Labels</string>
+    <string name="settings_high_performance">High Performance Mode</string>
+    <string name="settings_battery_saver">Battery Saver Mode</string>
+    
+    <!-- Statistics Strings -->
+    <string name="statistics_title">Performance Statistics</string>
+    <string name="statistics_fps">Frames Per Second</string>
+    <string name="statistics_inference_time">Inference Time</string>
+    <string name="statistics_total_detections">Total Detections</string>
+    <string name="statistics_person_detections">Person Detections</string>
+    <string name="statistics_memory_usage">Memory Usage</string>
+    <string name="statistics_cpu_usage">CPU Usage</string>
+    <string name="statistics_battery_usage">Battery Usage</string>
+    <string name="statistics_thermal_state">Thermal State</string>
+    <string name="statistics_device_info">Device Information</string>
+    <string name="statistics_model_info">Model Information</string>
+    
+    <!-- Notifications -->
+    <string name="notification_detection">Human detected!</string>
+    <string name="notification_multiple_detections">%d humans detected</string>
+    <string name="notification_low_battery">Low battery - consider enabling battery saver</string>
+    <string name="notification_thermal_throttle">Device is throttling - performance reduced</string>
+    
+    <!-- Help and About -->
+    <string name="help_title">How to Use</string>
+    <string name="help_content">This app uses YOLOv11n to detect humans in real-time using your camera. 
+    \n\n• Point your camera at people
+    \n• The app will highlight detected humans with green boxes
+    \n• Adjust settings for better performance
+    \n• Use settings to switch between cameras or change resolution</string>
+    
+    <string name="about_title">About YOLOv11n</string>
+    <string name="about_content">YOLOv11n is a lightweight, fast object detection model optimized for mobile devices. 
+    \n\nThis implementation:
+    \n• Supports real-time human detection
+    \n• Uses TensorFlow Lite for efficient inference
+    \n• Optimized for Android devices
+    \n• Supports multiple hardware accelerators</string>
+    
+    <!-- Dialog Titles -->
+    <string name="dialog_resolution_title">Select Resolution</string>
+    <string name="dialog_delegate_title">Select Hardware Delegate</string>
+    <string name="dialog_quantization_title">Select Model Quantization</string>
+    <string name="dialog_settings_title">Settings</string>
+    <string name="dialog_about_title">About</string>
+    <string name="dialog_help_title">Help</string>
+    
+    <!-- Loading Messages -->
+    <string name="loading_detector">Initializing YOLOv11n detector...</string>
+    <string name="loading_camera2">Setting up Camera2 API...</string>
+    <string name="loading_overlay">Loading visualization components...</string>
+    <string name="loading_complete">Setup complete!</string>
+    
+    <!-- Format Strings -->
+    <string name="format_fps">%.1f FPS</string>
+    <string name="format_milliseconds">%.1f ms</string>
+    <string name="format_megabytes">%.1f MB</string>
+    <string name="format_percentage">%.1f%%</string>
+    <string name="format_confidence">%.1f%%</string>
+    
+    <!-- Menu Items -->
+    <string name="menu_settings">Settings</string>
+    <string name="menu_statistics">Statistics</string>
+    <string name="menu_help">Help</string>
+    <string name="menu_about">About</string>
+    <string name="menu_exit">Exit</string>
+    
+    <!-- Test Image Picker Strings -->
+    <string name="test_image_title">Test Image Picker</string>
+    <string name="input_methods">Input Methods</string>
+    <string name="gallery">Gallery</string>
+    <string name="camera">Camera</string>
+    <string name="url_input_hint">Enter image URL</string>
+    <string name="download_from_url">Download from URL</string>
+    <string name="selected_image">Selected Image</string>
+    <string name="sample_images">Sample Images</string>
+    <string name="sample_images_subtitle">Click on any sample image to test detection</string>
+    <string name="clear_selection">Clear Selection</string>
+    <string name="source">Source: %s</string>
+    <string name="processing">Processing...</string>
+    <string name="downloading">Downloading...</string>
+    <string name="download_failed">Download failed</string>
+    <string name="invalid_url">Please enter a valid image URL</string>
+    
+    <!-- Settings Fragment Strings -->
+    <string name="detection_parameters">Detection Parameters</string>
+    <string name="performance_options">Performance Options</string>
+    <string name="feature_toggles">Feature Toggles</string>
+    <string name="model_precision">Model Precision</string>
+    <string name="enable_object_tracking">Enable Object Tracking</string>
+    <string name="debug_mode">Debug Mode</string>
+    <string name="face_landmarks">Face Landmarks</string>
+    <string name="gpu_acceleration">GPU Acceleration</string>
+    <string name="image_preprocessing">Image Preprocessing</string>
+    <string name="processing_fps">Processing FPS</string>
+    <string name="maximum_detections">Maximum Detections</string>
+    <string name="confidence_threshold">Confidence Threshold</string>
+    <string name="iou_threshold">IoU Threshold</string>
+    <string name="reset_to_defaults">Reset to Defaults</string>
+    <string name="apply">Apply</string>
+    <string name="close">Close</string>
+    <string name="balanced_performance">Balanced performance settings</string>
+    <string name="performance_factors">Performance factors: %s</string>
+    
+    <!-- Main Activity Strings -->
+    <string name="initializing_camera">Initializing Camera...</string>
+    <string name="camera_started">Camera Started</string>
+    <string name="camera_opened">Camera Opened</string>
+    <string name="camera_disconnected">Camera Disconnected</string>
+    <string name="camera_error">Camera Error: %d</string>
+    <string name="surface_not_ready">Surface not ready</string>
+    <string name="starting_camera">Starting camera...</string>
+    <string name="camera_start_failed">Camera start failed: %s</string>
+    <string name="session_configuration_failed">Session Configuration Failed</string>
+    <string name="camera_permission_required">Camera permission required</string>
+    <string name="testing_with_image">Testing with image: %s</string>
+    <string name="capturing_frame">Capturing frame...</string>
+    <string name="paused">Paused</string>
+    <string name="running">Running</string>
+    <string name="processing_error">Processing error: %s</string>
+</resources>

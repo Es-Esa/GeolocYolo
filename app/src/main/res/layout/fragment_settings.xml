@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".ui.SettingsFragment">
+
+    <!-- App Bar -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="Detection Settings"
+            app:titleTextColor="@android:color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Detection Parameters Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Detection Parameters"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="@android:color/black" />
+
+                    <!-- Confidence Threshold -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Confidence Threshold"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/confidenceSlider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:thumbColor="@color/accent_color"
+                            app:trackColorActive="@color/accent_color"
+                            app:trackColorInactive="@android:color/darker_gray" />
+
+                        <TextView
+                            android:id="@+id/confidenceValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.50"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_gravity="end" />
+
+                    </LinearLayout>
+
+                    <!-- IoU Threshold -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="IoU Threshold"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/iouSlider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:thumbColor="@color/accent_color"
+                            app:trackColorActive="@color/accent_color"
+                            app:trackColorInactive="@android:color/darker_gray" />
+
+                        <TextView
+                            android:id="@+id/iouValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.45"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_gravity="end" />
+
+                    </LinearLayout>
+
+                    <!-- Max Detections -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Maximum Detections"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/maxDetectionsSlider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:thumbColor="@color/accent_color"
+                            app:trackColorActive="@color/accent_color"
+                            app:trackColorInactive="@android:color/darker_gray" />
+
+                        <TextView
+                            android:id="@+id/maxDetectionsValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_gravity="end" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Performance Options Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Performance Options"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="@android:color/black" />
+
+                    <!-- Processing FPS -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Processing FPS"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <com.google.android.material.slider.Slider
+                            android:id="@+id/processingFpsSlider"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:thumbColor="@color/accent_color"
+                            app:trackColorActive="@color/accent_color"
+                            app:trackColorInactive="@android:color/darker_gray" />
+
+                        <TextView
+                            android:id="@+id/processingFpsValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="30 FPS"
+                            android:textSize="12sp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_gravity="end" />
+
+                    </LinearLayout>
+
+                    <!-- Model Precision -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Model Precision"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:id="@+id/modelPrecisionText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:background="@drawable/clickable_background"
+                            android:text="FP32"
+                            android:textSize="16sp"
+                            android:textColor="@android:color/black"
+                            android:drawableEnd="@android:drawable/ic_menu_more"
+                            android:clickable="true"
+                            android:focusable="true" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Feature Toggles Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Feature Toggles"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp"
+                        android:textColor="@android:color/black" />
+
+                    <!-- Enable Tracking -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Enable Object Tracking"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/trackingSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:thumbTint="@color/accent_color" />
+
+                    </LinearLayout>
+
+                    <!-- Enable Debug Mode -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Debug Mode"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/debugSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:thumbTint="@color/accent_color" />
+
+                    </LinearLayout>
+
+                    <!-- Enable Landmarks -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Face Landmarks"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/landmarksSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:thumbTint="@color/accent_color" />
+
+                    </LinearLayout>
+
+                    <!-- Enable GPU Acceleration -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="GPU Acceleration"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/gpuSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:thumbTint="@color/accent_color" />
+
+                    </LinearLayout>
+
+                    <!-- Enable Image Preprocessing -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Image Preprocessing"
+                            android:textSize="14sp" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/preprocessingSwitch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:thumbTint="@color/accent_color" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="end"
+                android:paddingTop="8dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/resetToDefaultsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:text="Reset to Defaults"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/applyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apply"
+                    android:backgroundTint="@color/accent_color" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Close Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:backgroundTint="@android:color/white"
+        app:tint="@android:color/black" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

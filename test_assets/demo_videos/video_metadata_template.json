@@ -1,0 +1,225 @@
+{
+  "video_test_metadata": {
+    "test_date": "2024-11-11T17:47:37Z",
+    "test_suite_version": "1.0.0",
+    "device_info": {
+      "device_model": "Android Test Device",
+      "android_version": "13",
+      "ram_gb": 8
+    }
+  },
+  
+  "video_files": [
+    {
+      "filename": "single_person_walking.mp4",
+      "description": "Single person walking in outdoor setting",
+      "duration_seconds": 15,
+      "resolution": [1920, 1080],
+      "fps": 30,
+      "file_size_mb": 42.5,
+      "total_frames": 450,
+      "scenarios": ["single_person", "walking", "outdoor", "good_lighting"],
+      "ground_truth": {
+        "total_people_appearances": 15,
+        "person_paths": [
+          {
+            "start_frame": 0,
+            "end_frame": 450,
+            "bbox_path": "left_to_right"
+          }
+        ]
+      },
+      "expected_results": {
+        "min_detection_rate": 0.95,
+        "max_processing_fps": 30,
+        "target_accuracy": 0.90
+      }
+    },
+    
+    {
+      "filename": "group_conversation.mp4", 
+      "description": "3-5 people having a conversation",
+      "duration_seconds": 20,
+      "resolution": [1920, 1080],
+      "fps": 30,
+      "file_size_mb": 58.3,
+      "total_frames": 600,
+      "scenarios": ["multiple_people", "indoor", "conversation", "overlapping"],
+      "ground_truth": {
+        "total_people_appearances": 18,
+        "max_people_simultaneous": 5,
+        "person_paths": [
+          {
+            "start_frame": 0,
+            "end_frame": 600,
+            "person_id": 1,
+            "bbox_path": "static_position"
+          },
+          {
+            "start_frame": 0,
+            "end_frame": 600,
+            "person_id": 2,
+            "bbox_path": "slight_movement"
+          }
+        ]
+      },
+      "expected_results": {
+        "min_detection_rate": 0.85,
+        "max_processing_fps": 25,
+        "target_accuracy": 0.80
+      }
+    },
+    
+    {
+      "filename": "crowd_movement.mp4",
+      "description": "Large crowd of people in motion",
+      "duration_seconds": 30,
+      "resolution": [1920, 1080],
+      "fps": 30,
+      "file_size_mb": 89.7,
+      "total_frames": 900,
+      "scenarios": ["crowd", "dense_population", "outdoor", "fast_motion"],
+      "ground_truth": {
+        "total_people_appearances": 120,
+        "max_people_simultaneous": 25,
+        "density": "high"
+      },
+      "expected_results": {
+        "min_detection_rate": 0.70,
+        "max_processing_fps": 15,
+        "target_accuracy": 0.75
+      }
+    },
+    
+    {
+      "filename": "people_running.mp4",
+      "description": "People running with fast motion",
+      "duration_seconds": 10,
+      "resolution": [1920, 1080],
+      "fps": 60,
+      "file_size_mb": 38.2,
+      "total_frames": 600,
+      "scenarios": ["fast_motion", "running", "outdoor", "motion_blur"],
+      "ground_truth": {
+        "total_people_appearances": 6,
+        "max_people_simultaneous": 2,
+        "motion_intensity": "high"
+      },
+      "expected_results": {
+        "min_detection_rate": 0.75,
+        "max_processing_fps": 60,
+        "target_accuracy": 0.78
+      }
+    },
+    
+    {
+      "filename": "low_light_night.mp4",
+      "description": "People in low light conditions",
+      "duration_seconds": 15,
+      "resolution": [1920, 1080],
+      "fps": 30,
+      "file_size_mb": 35.8,
+      "total_frames": 450,
+      "scenarios": ["low_light", "night", "outdoor", "challenging"],
+      "ground_truth": {
+        "total_people_appearances": 8,
+        "lighting_conditions": "low_light",
+        "visibility": "poor"
+      },
+      "expected_results": {
+        "min_detection_rate": 0.60,
+        "max_processing_fps": 30,
+        "target_accuracy": 0.65
+      }
+    },
+    
+    {
+      "filename": "mixed_activities.mp4",
+      "description": "Compilation of different human activities",
+      "duration_seconds": 60,
+      "resolution": [1920, 1080],
+      "fps": 30,
+      "file_size_mb": 175.4,
+      "total_frames": 1800,
+      "scenarios": ["mixed", "various_activities", "changing_conditions"],
+      "ground_truth": {
+        "total_people_appearances": 45,
+        "scenes": [
+          {
+            "start_frame": 0,
+            "end_frame": 300,
+            "description": "Single person walking"
+          },
+          {
+            "start_frame": 301,
+            "end_frame": 600,
+            "description": "Group of people"
+          },
+          {
+            "start_frame": 601,
+            "end_frame": 900,
+            "description": "Fast motion activity"
+          },
+          {
+            "start_frame": 901,
+            "end_frame": 1200,
+            "description": "Low light conditions"
+          },
+          {
+            "start_frame": 1201,
+            "end_frame": 1800,
+            "description": "Crowd scene"
+          }
+        ]
+      },
+      "expected_results": {
+        "min_detection_rate": 0.80,
+        "max_processing_fps": 30,
+        "target_accuracy": 0.82
+      }
+    }
+  ],
+  
+  "testing_parameters": {
+    "real_time_testing": {
+      "process_every_n_frames": 1,
+      "target_fps": 30,
+      "timeout_seconds": 300
+    },
+    "offline_testing": {
+      "process_all_frames": true,
+      "generate_annotated_video": true,
+      "save_detections_json": true
+    },
+    "stress_testing": {
+      "loop_video": true,
+      "max_duration_minutes": 10,
+      "monitor_thermal": true
+    }
+  },
+  
+  "performance_targets": {
+    "low_end_device": {
+      "min_fps": 10,
+      "max_memory_mb": 200,
+      "battery_impact_per_hour": 15
+    },
+    "mid_range_device": {
+      "min_fps": 20,
+      "max_memory_mb": 400,
+      "battery_impact_per_hour": 25
+    },
+    "high_end_device": {
+      "min_fps": 30,
+      "max_memory_mb": 800,
+      "battery_impact_per_hour": 40
+    }
+  },
+  
+  "output_format": {
+    "annotated_video": "detections_annotated_{video_name}.mp4",
+    "detection_log": "detection_log_{video_name}.json",
+    "performance_report": "video_performance_{video_name}.json",
+    "summary_csv": "video_test_results.csv"
+  }
+}

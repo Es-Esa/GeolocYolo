@@ -1,0 +1,179 @@
+# Model Comparison Configuration
+# JSON configuration for testing different YOLO variants
+
+{
+  "comparison_config": {
+    "test_date": "2024-11-11",
+    "test_environment": "Android Performance Test Suite",
+    "models_to_compare": [
+      {
+        "name": "YOLOv11n",
+        "description": "Ultra Lightweight - For low-end devices",
+        "model_path": "yolov11n.tflite",
+        "input_size": [320, 320, 3],
+        "confidence_threshold": 0.4,
+        "nms_threshold": 0.5,
+        "max_detections": 50,
+        "optimization": "int8",
+        "target_device_class": "low-end"
+      },
+      {
+        "name": "YOLOv11s", 
+        "description": "Balanced Performance - For mid-range devices",
+        "model_path": "yolov11s.tflite",
+        "input_size": [416, 416, 3],
+        "confidence_threshold": 0.3,
+        "nms_threshold": 0.4,
+        "max_detections": 100,
+        "optimization": "fp16",
+        "target_device_class": "mid-range"
+      },
+      {
+        "name": "YOLOv11m",
+        "description": "High Accuracy - For high-end devices", 
+        "model_path": "yolov11m.tflite",
+        "input_size": [416, 416, 3],
+        "confidence_threshold": 0.25,
+        "nms_threshold": 0.4,
+        "max_detections": 200,
+        "optimization": "fp32",
+        "target_device_class": "high-end"
+      },
+      {
+        "name": "YOLOv11l",
+        "description": "Maximum Accuracy - For flagship devices",
+        "model_path": "yolov11l.tflite", 
+        "input_size": [512, 512, 3],
+        "confidence_threshold": 0.2,
+        "nms_threshold": 0.3,
+        "max_detections": 300,
+        "optimization": "fp32",
+        "target_device_class": "flagship"
+      }
+    ],
+    "test_scenarios": [
+      {
+        "scenario_name": "single_person",
+        "description": "Single person detection in various poses",
+        "test_images": [
+          "single_person_standing_2.jpg",
+          "single_person_standing_4.jpg", 
+          "single_person_standing_6.png"
+        ]
+      },
+      {
+        "scenario_name": "multiple_people",
+        "description": "Multiple people in frame",
+        "test_images": [
+          "multiple_people_group_1.png",
+          "multiple_people_group_3.jpeg",
+          "multiple_people_group_6.jpg"
+        ]
+      },
+      {
+        "scenario_name": "different_lighting",
+        "description": "Various lighting conditions",
+        "test_images": [
+          "indoor_lighting_2.jpg",
+          "indoor_lighting_6.jpg",
+          "indoor_lighting_9.jpg",
+          "outdoor_daylight_3.png",
+          "outdoor_daylight_5.jpg",
+          "outdoor_daylight_8.png"
+        ]
+      },
+      {
+        "scenario_name": "low_light",
+        "description": "Low light and challenging conditions",
+        "test_images": [
+          "low_light_3.jpg",
+          "low_light_8.jpg",
+          "low_light_9.jpg"
+        ]
+      },
+      {
+        "scenario_name": "motion",
+        "description": "Moving people and motion blur",
+        "test_images": [
+          "person_motion_3.png",
+          "person_motion_6.png",
+          "person_motion_7.jpg"
+        ]
+      },
+      {
+        "scenario_name": "special_conditions",
+        "description": "Backlit, silhouettes, close-up",
+        "test_images": [
+          "backlit_silhouette_2.jpg",
+          "backlit_silhouette_4.jpg",
+          "backlit_silhouette_6.jpg",
+          "close_up_portrait_6.jpg",
+          "close_up_portrait_7.jpg",
+          "close_up_portrait_8.jpg"
+        ]
+      }
+    ],
+    "performance_metrics": {
+      "speed": {
+        "inference_time_ms": "Average inference time per image",
+        "fps": "Frames per second processing rate",
+        "batch_processing_time": "Time for batch processing"
+      },
+      "accuracy": {
+        "precision": "True positives / (True positives + False positives)",
+        "recall": "True positives / (True positives + False negatives)",
+        "map": "Mean Average Precision",
+        "f1_score": "2 * (precision * recall) / (precision + recall)"
+      },
+      "efficiency": {
+        "memory_usage_mb": "Peak memory usage in MB",
+        "battery_impact": "Battery drain per hour of use",
+        "cpu_utilization": "CPU usage percentage"
+      }
+    },
+    "device_classes": {
+      "low_end": {
+        "ram_gb": 2,
+        "cpu_cores": 4,
+        "android_version": "8.0+",
+        "target_models": ["YOLOv11n"]
+      },
+      "mid_range": {
+        "ram_gb": 4,
+        "cpu_cores": 8,
+        "android_version": "9.0+", 
+        "target_models": ["YOLOv11n", "YOLOv11s"]
+      },
+      "high_end": {
+        "ram_gb": 8,
+        "cpu_cores": 8,
+        "android_version": "10.0+",
+        "target_models": ["YOLOv11s", "YOLOv11m"]
+      },
+      "flagship": {
+        "ram_gb": 12,
+        "cpu_cores": 8,
+        "android_version": "11.0+",
+        "target_models": ["YOLOv11m", "YOLOv11l"]
+      }
+    },
+    "comparison_criteria": {
+      "minimum_fps": {
+        "real_time": 15,
+        "smooth": 30,
+        "high_quality": 60
+      },
+      "memory_limits": {
+        "low_end": 100,
+        "mid_range": 300,
+        "high_end": 500,
+        "flagship": 1000
+      },
+      "accuracy_thresholds": {
+        "minimum": 0.6,
+        "good": 0.8,
+        "excellent": 0.9
+      }
+    }
+  }
+}
